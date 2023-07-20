@@ -1,5 +1,5 @@
 export default [
-    { exact: true, path: '/', redirect:'/order' },
+    { exact: true, path: '/', redirect:'/order/instruct' },
 
     {exact: true, path:'/order' ,component:'./Order', routes:[
       {path:'/order/instruct',component:'./Order/Main/$index.tsx', routes:[
