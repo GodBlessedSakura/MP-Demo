@@ -55,26 +55,12 @@ export default function Nav() {
           >
             吐槽墙
           </Menu.Item>
-        </Menu>
-      </div>
-
-      <div className={styles.menu}>
-        <Menu>
-          <Menu.Item key="2" icon={<MyIcon type="icon-moon" />}>
-            Dark Mode
-          </Menu.Item>
-          <Menu.Item key="3" icon={<MyIcon type="icon-account" />}>
-            My Account
-          </Menu.Item>
-          <Menu.Item key="4" icon={<MyIcon type="icon-forward" />}>
-            Updates & FAQ
-          </Menu.Item>
           <Menu.Item
             key="5"
             icon={<MyIcon type="icon-logout" />}
             onClick={handleLogOut}
           >
-            Log Out
+            登出
           </Menu.Item>
         </Menu>
       </div>

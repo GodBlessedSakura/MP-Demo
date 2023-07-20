@@ -41,7 +41,7 @@ export default function SignUp() {
               },
             ]}
           >
-            <Input placeholder="Email" size="large" />
+            <Input placeholder="Username" size="large" />
           </Form.Item>
           <Form.Item
             name="password"

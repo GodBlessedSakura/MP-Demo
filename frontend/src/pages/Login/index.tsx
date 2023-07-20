@@ -40,7 +40,7 @@ export default function Login() {
               },
             ]}
           >
-            <Input placeholder="Email" size="large" />
+            <Input placeholder="Username" size="large" />
           </Form.Item>
           <Form.Item
             name="password"
