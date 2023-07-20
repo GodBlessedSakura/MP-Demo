@@ -40,7 +40,14 @@ export default function Danmaku() {
       }}
     >
       <div style={{ fontSize: '2rem', fontWeight: 500 }}>下方输入弹幕</div>
-      <div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          width: '75%',
+          marginTop: '100px',
+        }}
+      >
         <Form style={{ width: '60%' }} form={form}>
           <div style={{ position: 'relative', padding: '0 8px 8px 8px' }}>
             <Form.Item
