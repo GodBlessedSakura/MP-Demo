@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Form, Input, Button } from 'antd';
+import { history } from 'umi';
 import request from '@/utils/request';
 import styles from './index.less';
 
@@ -57,7 +58,16 @@ export default function Login() {
               size="large"
               loading={loading}
             >
-              Log In
+              登录
+            </Button>
+            <Button
+              type="primary"
+              size="large"
+              onClick={() => {
+                history.push('/signup');
+              }}
+            >
+              去注册
             </Button>
           </div>
         </Form>

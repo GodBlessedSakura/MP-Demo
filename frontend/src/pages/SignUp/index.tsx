@@ -59,7 +59,7 @@ export default function SignUp() {
               size="large"
               loading={loading}
             >
-              Sign Up
+              注册
             </Button>
           </div>
         </Form>

@@ -1,10 +1,13 @@
 import { Dispatch, SetStateAction, useState } from 'react';
-import { Form, Input, Spin, Select } from 'antd';
+import { Form, Input, Spin, Select, message } from 'antd';
 import request from '@/utils/request';
 import MyIcon from '@/components/Icons';
+import { history } from 'umi';
 import styles from './index.less';
+
 const { TextArea } = Input;
 const { Option } = Select;
+
 export default function ChatBox(props: chatBoxProps) {
   const [form] = Form.useForm();
   const [isProcessing, setProcessing] = useState<boolean>(false);
@@ -24,6 +27,40 @@ export default function ChatBox(props: chatBoxProps) {
       form.setFieldValue('text', '');
       setProcessing(false);
       console.log(response);
+      const { flag, additionalInfo } = response;
+      switch (flag) {
+        case '1':
+          message.success('识别为：推荐菜品' + '\n' + additionalInfo);
+          history.push('/order/instruct/recommend');
+          break;
+        case '2':
+          message.success('识别为：查看历史订单');
+          history.push('/order/instruct/history');
+          break;
+        case '3':
+          message.success('识别为：展示全部商家餐品' + '\n' + additionalInfo);
+          history.push('/order/instruct/menu');
+          break;
+        case '4':
+          message.success('识别为：拉黑商家');
+          history.push('/order/instruct/dislike');
+          break;
+        case '5':
+          message.success('识别为：出餐');
+          history.push('/order/instruct/give');
+          break;
+        case '6':
+          message.success('识别为：收餐');
+          history.push('/order/instruct/receive');
+          break;
+        case '7':
+          message.success('识别为：查看弹幕');
+          history.push('/order/instruct/danmaku');
+          break;
+        default:
+          message.error('无法识别的指令呢');
+          break;
+      }
     }
   };
 
