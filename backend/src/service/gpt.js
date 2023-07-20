@@ -17,6 +17,7 @@ export async function generateResponse(messages, max_tokens = 1000) {
         "Content-Type": "application/json",
         Authorization: `Bearer ${apiKey}`,
       },
+      timeout: 50000,
       // responseType: "stream", // 设置响应类型为流
     }
   );
