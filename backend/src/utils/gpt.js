@@ -16,3 +16,17 @@ export const getMesseageForRecom = (content) => {
   ];
   return messages;
 };
+export const getMesseageForInspec = (content) => {
+  const messages = [
+    {
+      role: "system",
+      content:
+        "你将审核以下用户的发言是否涉及违法，侮辱他人，暴力情节，当你很确定发言不当时直接返回1，否则直接返回0。不要返回其它任何内容，只能返回1或0",
+    },
+    {
+      role: "user",
+      content,
+    },
+  ];
+  return messages;
+};
